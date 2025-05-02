@@ -1,0 +1,29 @@
+# Add directories or file patterns to ignore during indexing (e.g. foo/ or *.csv)
+
+# 依赖目录
+node_modules/
+package-lock.json
+yarn.lock
+
+# 构建输出
+dist/
+unpackage/
+.hbuilderx/
+
+# 缓存文件
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 编辑器配置
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 其他
+.env
+.env.local
+.env.*.local

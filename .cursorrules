@@ -1,0 +1,84 @@
+每一次会话请求结束后进行会话总结，无论生成新文件还是修改已有文件都需要做总结，并将总结内容Append写入到Readme文件中(说明文件中的内容是累积增加的)。总结内容应包括:
+-会话的主要目的
+-完成的主要任务
+-关键决策和解决方案
+-使用的技术栈
+-修改了哪些文件
+
+
+{
+    "projectType": "uniapp",
+    "targetPlatform": "ios",
+    "language": "javascript",
+    "framework": "vue",
+    "filePatterns": {
+        "include": [
+            "*.vue",
+            "*.js",
+            "*.json",
+            "*.css",
+            "*.scss",
+            "*.less",
+            "*.wxml",
+            "*.wxss",
+            "*.html"
+        ],
+        "exclude": [
+            "node_modules/**",
+            "dist/**",
+            "unpackage/**"
+        ]
+    },
+    "linting": {
+        "enabled": true,
+        "rules": {
+            "javascript": "eslint",
+            "vue": "eslint-plugin-vue",
+            "style": "stylelint",
+            "python": "pylint"
+        },
+        "config": {
+            "eslint": {
+                "extends": [
+                    "plugin:vue/essential",
+                    "eslint:recommended"
+                ],
+                "rules": {
+                    "no-console": "warn",
+                    "no-debugger": "warn",
+                    "indent": ["error", 2],
+                    "quotes": ["error", "single"],
+                    "semi": ["error", "never"]
+                }
+            },
+            "pylint": {
+                "max-line-length": 120,
+                "disable": [
+                    "C0111",
+                    "C0103"
+                ]
+            }
+        }
+    },
+    "formatting": {
+        "javascript": "prettier",
+        "vue": "prettier",
+        "css": "prettier",
+        "python": "black"
+    },
+    "suggestions": {
+        "enabled": true,
+        "types": [
+            "code",
+            "documentation",
+            "api"
+        ]
+    },
+    "debugging": {
+        "enabled": true,
+        "configurations": [
+            "chrome",
+            "ios-simulator"
+        ]
+    }
+} 
