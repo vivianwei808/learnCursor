@@ -1,0 +1,1210 @@
+[
+  {
+    "type": "category",
+    "title": "萌新必读",
+    "items": [
+      {
+        "type": "link",
+        "title": "简介",
+        "url": "https://doc.iocoder.cn/intro/"
+      },
+      {
+        "type": "link",
+        "title": "🐴 严肃声明",
+        "url": "https://doc.iocoder.cn/intro/#🐴-严肃声明"
+      },
+      {
+        "type": "link",
+        "title": "🐳 项目关系",
+        "url": "https://doc.iocoder.cn/intro/#🐳-项目关系"
+      },
+      {
+        "type": "link",
+        "title": "后端项目",
+        "url": "https://doc.iocoder.cn/intro/#后端项目"
+      },
+      {
+        "type": "link",
+        "title": "前端项目",
+        "url": "https://doc.iocoder.cn/intro/#前端项目"
+      },
+      {
+        "type": "link",
+        "title": "🐶 在线体验",
+        "url": "https://doc.iocoder.cn/intro/#🐶-在线体验"
+      },
+      {
+        "type": "link",
+        "title": "📚 国内顶级开源项目对比",
+        "url": "https://doc.iocoder.cn/intro/#📚-国内顶级开源项目对比"
+      },
+      {
+        "type": "link",
+        "title": "交流群",
+        "url": "https://doc.iocoder.cn/qun/"
+      },
+      {
+        "type": "link",
+        "title": "视频教程",
+        "url": "https://doc.iocoder.cn/video/"
+      },
+      {
+        "type": "link",
+        "title": "功能列表",
+        "url": "https://doc.iocoder.cn/feature/"
+      },
+      {
+        "type": "link",
+        "title": "快速启动（后端项目）",
+        "url": "https://doc.iocoder.cn/quick-start/"
+      },
+      {
+        "type": "link",
+        "title": "快速启动（前端项目）",
+        "url": "https://doc.iocoder.cn/quick-start-front/"
+      },
+      {
+        "type": "link",
+        "title": "接口文档",
+        "url": "https://doc.iocoder.cn/api-doc/"
+      },
+      {
+        "type": "link",
+        "title": "技术选型",
+        "url": "https://doc.iocoder.cn/technology/"
+      },
+      {
+        "type": "link",
+        "title": "项目结构",
+        "url": "https://doc.iocoder.cn/project-intro/"
+      },
+      {
+        "type": "link",
+        "title": "代码热加载",
+        "url": "https://doc.iocoder.cn/dev-hot-swap/"
+      },
+      {
+        "type": "link",
+        "title": "一键改包",
+        "url": "https://doc.iocoder.cn/project-rename/"
+      },
+      {
+        "type": "link",
+        "title": "迁移模块（适合新项目）",
+        "url": "https://doc.iocoder.cn/migrate-module/"
+      },
+      {
+        "type": "link",
+        "title": "删除功能（以租户为例）",
+        "url": "https://doc.iocoder.cn/delete-code/"
+      },
+      {
+        "type": "link",
+        "title": "表结构变更（版本升级）",
+        "url": "https://doc.iocoder.cn/sql-update/"
+      },
+      {
+        "type": "link",
+        "title": "国产信创数据库（DM 达梦、大金、OpenGauss）",
+        "url": "https://doc.iocoder.cn/xinchuang-db/"
+      },
+      {
+        "type": "link",
+        "title": "如何去除 Redis 缓存",
+        "url": "https://doc.iocoder.cn/remove-redis/"
+      },
+      {
+        "type": "link",
+        "title": "内网穿透",
+        "url": "https://doc.iocoder.cn/natapp/"
+      },
+      {
+        "type": "link",
+        "title": "面试题、简历模版、简历优化",
+        "url": "https://doc.iocoder.cn/interview/"
+      },
+      {
+        "type": "link",
+        "title": "项目外包",
+        "url": "https://doc.iocoder.cn/waibao/"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "后端手册",
+    "items": [
+      {
+        "type": "link",
+        "title": "新建模块",
+        "url": "https://doc.iocoder.cn/module-new/"
+      },
+      {
+        "type": "link",
+        "title": "代码生成【单表】（新增功能）",
+        "url": "https://doc.iocoder.cn/new-feature/"
+      },
+      {
+        "type": "link",
+        "title": "代码生成【主子表】",
+        "url": "https://doc.iocoder.cn/new-feature/master-sub/"
+      },
+      {
+        "type": "link",
+        "title": "代码生成（树表）",
+        "url": "https://doc.iocoder.cn/new-feature/tree/"
+      },
+      {
+        "type": "link",
+        "title": "功能权限",
+        "url": "https://doc.iocoder.cn/resource-permission/"
+      },
+      {
+        "type": "link",
+        "title": "数据权限",
+        "url": "https://doc.iocoder.cn/data-permission/"
+      },
+      {
+        "type": "link",
+        "title": "用户体系",
+        "url": "https://doc.iocoder.cn/user-center/"
+      },
+      {
+        "type": "link",
+        "title": "三方登录",
+        "url": "https://doc.iocoder.cn/social-user/"
+      },
+      {
+        "type": "link",
+        "title": "OAuth 2.0（SSO 单点登录)",
+        "url": "https://doc.iocoder.cn/oauth2/"
+      },
+      {
+        "type": "link",
+        "title": "SaaS 多租户【字段隔离】",
+        "url": "https://doc.iocoder.cn/saas-tenant/"
+      },
+      {
+        "type": "link",
+        "title": "SaaS 多租户【数据库隔离】",
+        "url": "https://doc.iocoder.cn/saas-tenant/dynamic/"
+      },
+      {
+        "type": "link",
+        "title": "WebSocket 实时通信",
+        "url": "https://doc.iocoder.cn/websocket/"
+      },
+      {
+        "type": "link",
+        "title": "异常处理（错误码）",
+        "url": "https://doc.iocoder.cn/exception/"
+      },
+      {
+        "type": "link",
+        "title": "参数校验、时间传参",
+        "url": "https://doc.iocoder.cn/validator/"
+      },
+      {
+        "type": "link",
+        "title": "分页实现",
+        "url": "https://doc.iocoder.cn/page-feature/"
+      },
+      {
+        "type": "link",
+        "title": "VO 对象转换、数据翻译",
+        "url": "https://doc.iocoder.cn/vo/"
+      },
+      {
+        "type": "link",
+        "title": "文件存储（上传下载）",
+        "url": "https://doc.iocoder.cn/file/"
+      },
+      {
+        "type": "link",
+        "title": "Excel 导入导出",
+        "url": "https://doc.iocoder.cn/excel-import-and-export/"
+      },
+      {
+        "type": "link",
+        "title": "操作日志、访问日志、异常日志",
+        "url": "https://doc.iocoder.cn/system-log/"
+      },
+      {
+        "type": "link",
+        "title": "MyBatis 数据库",
+        "url": "https://doc.iocoder.cn/mybatis/"
+      },
+      {
+        "type": "link",
+        "title": "MyBatis 联表&分页查询",
+        "url": "https://doc.iocoder.cn/mybatis-pro/"
+      },
+      {
+        "type": "link",
+        "title": "多数据源（读写分离）、事务",
+        "url": "https://doc.iocoder.cn/dynamic-datasource/"
+      },
+      {
+        "type": "link",
+        "title": "Redis 缓存",
+        "url": "https://doc.iocoder.cn/redis-cache/"
+      },
+      {
+        "type": "link",
+        "title": "本地缓存",
+        "url": "https://doc.iocoder.cn/local-cache/"
+      },
+      {
+        "type": "link",
+        "title": "异步任务",
+        "url": "https://doc.iocoder.cn/async-task/"
+      },
+      {
+        "type": "link",
+        "title": "分布式锁",
+        "url": "https://doc.iocoder.cn/distributed-lock/"
+      },
+      {
+        "type": "link",
+        "title": "幂等性（防重复提交）",
+        "url": "https://doc.iocoder.cn/idempotent/"
+      },
+      {
+        "type": "link",
+        "title": "请求限流（RateLimiter）",
+        "url": "https://doc.iocoder.cn/rate-limiter/"
+      },
+      {
+        "type": "link",
+        "title": "HTTP 接口签名（防篡改）",
+        "url": "https://doc.iocoder.cn/http-sign/"
+      },
+      {
+        "type": "link",
+        "title": "单元测试",
+        "url": "https://doc.iocoder.cn/unit-test/"
+      },
+      {
+        "type": "link",
+        "title": "验证码",
+        "url": "https://doc.iocoder.cn/captcha/"
+      },
+      {
+        "type": "link",
+        "title": "工具类 Util",
+        "url": "https://doc.iocoder.cn/util/"
+      },
+      {
+        "type": "link",
+        "title": "配置管理",
+        "url": "https://doc.iocoder.cn/config-center/"
+      },
+      {
+        "type": "link",
+        "title": "数据库文档",
+        "url": "https://doc.iocoder.cn/db-doc/"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "中间件手册",
+    "items": [
+      {
+        "type": "link",
+        "title": "定时任务",
+        "url": "https://doc.iocoder.cn/job/"
+      },
+      {
+        "type": "link",
+        "title": "消息队列（内存）",
+        "url": "https://doc.iocoder.cn/message-queue/event/"
+      },
+      {
+        "type": "link",
+        "title": "消息队列（Redis）",
+        "url": "https://doc.iocoder.cn/message-queue/redis/"
+      },
+      {
+        "type": "link",
+        "title": "消息队列（RocketMQ）",
+        "url": "https://doc.iocoder.cn/message-queue/rocketmq/"
+      },
+      {
+        "type": "link",
+        "title": "消息队列（RabbitMQ）",
+        "url": "https://doc.iocoder.cn/message-queue/rabbitmq/"
+      },
+      {
+        "type": "link",
+        "title": "消息队列（Kafka）",
+        "url": "https://doc.iocoder.cn/message-queue/kafka/"
+      },
+      {
+        "type": "link",
+        "title": "限流熔断",
+        "url": "https://doc.iocoder.cn/server-protection/"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "工作流手册",
+    "items": [
+      {
+        "type": "link",
+        "title": "工作流演示",
+        "url": "https://doc.iocoder.cn/bpm-preview/"
+      },
+      {
+        "type": "link",
+        "title": "功能开启",
+        "url": "https://doc.iocoder.cn/bpm/"
+      },
+      {
+        "type": "link",
+        "title": "工作流（达梦适配）",
+        "url": "https://doc.iocoder.cn/bpm/dameng/"
+      },
+      {
+        "type": "link",
+        "title": "审批接入（流程表单）",
+        "url": "https://doc.iocoder.cn/bpm/use-bpm-form/"
+      },
+      {
+        "type": "link",
+        "title": "审批接入（业务表单）",
+        "url": "https://doc.iocoder.cn/bpm/use-business-form/"
+      },
+      {
+        "type": "link",
+        "title": "流程设计器（BPMN）",
+        "url": "https://doc.iocoder.cn/bpm/model-designer-bpmn/"
+      },
+      {
+        "type": "link",
+        "title": "流程设计器（钉钉、飞书）",
+        "url": "https://doc.iocoder.cn/bpm/model-designer-dingding/"
+      },
+      {
+        "type": "link",
+        "title": "选择审批人、发起人自选",
+        "url": "https://doc.iocoder.cn/bpm/assignee/"
+      },
+      {
+        "type": "link",
+        "title": "会签、或签、依次审批",
+        "url": "https://doc.iocoder.cn/bpm/multi-instance/"
+      },
+      {
+        "type": "link",
+        "title": "流程发起、取消、重新发起",
+        "url": "https://doc.iocoder.cn/bpm/process-instance/"
+      },
+      {
+        "type": "link",
+        "title": "审批通过、不通过、驳回",
+        "url": "https://doc.iocoder.cn/bpm/task-todo-done/"
+      },
+      {
+        "type": "link",
+        "title": "审批加签、减签",
+        "url": "https://doc.iocoder.cn/bpm/sign/"
+      },
+      {
+        "type": "link",
+        "title": "审批转办、委派、抄送",
+        "url": "https://doc.iocoder.cn/bpm/task-delegation-and-cc/"
+      },
+      {
+        "type": "link",
+        "title": "执行监听器、任务监听器",
+        "url": "https://doc.iocoder.cn/bpm/listener/"
+      },
+      {
+        "type": "link",
+        "title": "流程表达式",
+        "url": "https://doc.iocoder.cn/bpm/expression/"
+      },
+      {
+        "type": "link",
+        "title": "流程审批通知",
+        "url": "https://doc.iocoder.cn/bpm/message/"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "大屏手册",
+    "items": [
+      {
+        "type": "link",
+        "title": "报表设计器",
+        "url": "https://doc.iocoder.cn/report/"
+      },
+      {
+        "type": "link",
+        "title": "大屏设计器",
+        "url": "https://doc.iocoder.cn/report/screen/"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "支付手册",
+    "items": [
+      {
+        "type": "link",
+        "title": "功能开启",
+        "url": "https://doc.iocoder.cn/pay/build/"
+      },
+      {
+        "type": "link",
+        "title": "支付宝支付接入",
+        "url": "https://doc.iocoder.cn/pay/alipay-pay-demo/"
+      },
+      {
+        "type": "link",
+        "title": "微信公众号支付接入",
+        "url": "https://doc.iocoder.cn/pay/wx-pub-pay-demo/"
+      },
+      {
+        "type": "link",
+        "title": "微信小程序支付接入",
+        "url": "https://doc.iocoder.cn/pay/wx-lite-pay-demo/"
+      },
+      {
+        "type": "link",
+        "title": "支付宝、微信退款接入",
+        "url": "https://doc.iocoder.cn/pay/refund-demo/"
+      },
+      {
+        "type": "link",
+        "title": "钱包充值、支付、退款",
+        "url": "https://doc.iocoder.cn/pay/wallet/"
+      },
+      {
+        "type": "link",
+        "title": "模拟支付、退款",
+        "url": "https://doc.iocoder.cn/pay/mock/"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "会员手册",
+    "items": [
+      {
+        "type": "link",
+        "title": "功能开启",
+        "url": "https://doc.iocoder.cn/member/build/"
+      },
+      {
+        "type": "link",
+        "title": "微信公众号登录",
+        "url": "https://doc.iocoder.cn/member/weixin-mp-login/"
+      },
+      {
+        "type": "link",
+        "title": "微信小程序登录",
+        "url": "https://doc.iocoder.cn/member/weixin-lite-login/"
+      },
+      {
+        "type": "link",
+        "title": "微信小程序订阅消息",
+        "url": "https://doc.iocoder.cn/member/weixin-lite-subscribe-message/"
+      },
+      {
+        "type": "link",
+        "title": "微信小程序码",
+        "url": "https://doc.iocoder.cn/member/weixin-lite-qrcode/"
+      },
+      {
+        "type": "link",
+        "title": "会员用户、标签、分组",
+        "url": "https://doc.iocoder.cn/member/user/"
+      },
+      {
+        "type": "link",
+        "title": "会员等级、积分、签到",
+        "url": "https://doc.iocoder.cn/member/level/"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "商城手册",
+    "items": [
+      {
+        "type": "link",
+        "title": "商城演示",
+        "url": "https://doc.iocoder.cn/mall-preview/"
+      },
+      {
+        "type": "link",
+        "title": "功能开启",
+        "url": "https://doc.iocoder.cn/mall/build/"
+      },
+      {
+        "type": "link",
+        "title": "商城装修",
+        "url": "https://doc.iocoder.cn/mall/diy/"
+      },
+      {
+        "type": "link",
+        "title": "在线客服",
+        "url": "https://doc.iocoder.cn/mall/kefu/"
+      },
+      {
+        "type": "link",
+        "title": "【商品】商品分类",
+        "url": "https://doc.iocoder.cn/mall/product-category/"
+      },
+      {
+        "type": "link",
+        "title": "【商品】商品属性",
+        "url": "https://doc.iocoder.cn/mall/product-property/"
+      },
+      {
+        "type": "link",
+        "title": "【商品】商品 SPU 与 SKU",
+        "url": "https://doc.iocoder.cn/mall/product-spu-sku/"
+      },
+      {
+        "type": "link",
+        "title": "【商品】商品评价",
+        "url": "https://doc.iocoder.cn/mall/product-comment/"
+      },
+      {
+        "type": "link",
+        "title": "【交易】购物车",
+        "url": "https://doc.iocoder.cn/mall/trade-cart/"
+      },
+      {
+        "type": "link",
+        "title": "【交易】交易订单",
+        "url": "https://doc.iocoder.cn/mall/trade-order/"
+      },
+      {
+        "type": "link",
+        "title": "【交易】售后退款",
+        "url": "https://doc.iocoder.cn/mall/trade-aftersale/"
+      },
+      {
+        "type": "link",
+        "title": "【交易】快递发货",
+        "url": "https://doc.iocoder.cn/mall/trade-delivery-express/"
+      },
+      {
+        "type": "link",
+        "title": "【交易】门店自提",
+        "url": "https://doc.iocoder.cn/mall/trade-delivery-pickup/"
+      },
+      {
+        "type": "link",
+        "title": "【交易】分销返佣",
+        "url": "https://doc.iocoder.cn/mall/trade-brokerage/"
+      },
+      {
+        "type": "link",
+        "title": "【营销】优惠劵",
+        "url": "https://doc.iocoder.cn/mall/promotion-coupon/"
+      },
+      {
+        "type": "link",
+        "title": "【营销】积分商城",
+        "url": "https://doc.iocoder.cn/mall/point-activity/"
+      },
+      {
+        "type": "link",
+        "title": "【营销】拼团活动",
+        "url": "https://doc.iocoder.cn/mall/promotion-combination/"
+      },
+      {
+        "type": "link",
+        "title": "【营销】秒杀活动",
+        "url": "https://doc.iocoder.cn/mall/promotion-seckill/"
+      },
+      {
+        "type": "link",
+        "title": "【营销】砍价活动",
+        "url": "https://doc.iocoder.cn/mall/promotion-bargain/"
+      },
+      {
+        "type": "link",
+        "title": "【营销】满减送活动",
+        "url": "https://doc.iocoder.cn/mall/promotion-record/"
+      },
+      {
+        "type": "link",
+        "title": "【营销】限时折扣",
+        "url": "https://doc.iocoder.cn/mall/promotion-discount/"
+      },
+      {
+        "type": "link",
+        "title": "【营销】内容管理",
+        "url": "https://doc.iocoder.cn/mall/promotion-content/"
+      },
+      {
+        "type": "link",
+        "title": "【统计】会员、商品、交易统计",
+        "url": "https://doc.iocoder.cn/mall/statistics/"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "ERP手册",
+    "items": [
+      {
+        "type": "link",
+        "title": "ERP 演示",
+        "url": "https://doc.iocoder.cn/erp-preview/"
+      },
+      {
+        "type": "link",
+        "title": "功能开启",
+        "url": "https://doc.iocoder.cn/erp/build/"
+      },
+      {
+        "type": "link",
+        "title": "【产品】产品信息、分类、单位",
+        "url": "https://doc.iocoder.cn/erp/product/"
+      },
+      {
+        "type": "link",
+        "title": "【库存】产品库存、库存明细",
+        "url": "https://doc.iocoder.cn/erp/stock/"
+      },
+      {
+        "type": "link",
+        "title": "【库存】其它入库、其它出库",
+        "url": "https://doc.iocoder.cn/erp/stock-in-out/"
+      },
+      {
+        "type": "link",
+        "title": "【库存】库存调拨、库存盘点",
+        "url": "https://doc.iocoder.cn/erp/stock-move-check/"
+      },
+      {
+        "type": "link",
+        "title": "【采购】采购订单、入库、退货",
+        "url": "https://doc.iocoder.cn/erp/purchase/"
+      },
+      {
+        "type": "link",
+        "title": "【销售】销售订单、出库、退货",
+        "url": "https://doc.iocoder.cn/erp/sale/"
+      },
+      {
+        "type": "link",
+        "title": "【财务】采购付款、销售收款",
+        "url": "https://doc.iocoder.cn/sale/finance-payment-receipt/"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "CRM手册",
+    "items": [
+      {
+        "type": "link",
+        "title": "CRM 演示",
+        "url": "https://doc.iocoder.cn/crm-preview/"
+      },
+      {
+        "type": "link",
+        "title": "功能开启",
+        "url": "https://doc.iocoder.cn/crm/build/"
+      },
+      {
+        "type": "link",
+        "title": "【线索】线索管理",
+        "url": "https://doc.iocoder.cn/crm/clue/"
+      },
+      {
+        "type": "link",
+        "title": "【客户】客户管理、公海客户",
+        "url": "https://doc.iocoder.cn/crm/customer/"
+      },
+      {
+        "type": "link",
+        "title": "【商机】商机管理、商机状态",
+        "url": "https://doc.iocoder.cn/crm/business/"
+      },
+      {
+        "type": "link",
+        "title": "【合同】合同管理、合同提醒",
+        "url": "https://doc.iocoder.cn/crm/contract/"
+      },
+      {
+        "type": "link",
+        "title": "【回款】回款管理、回款计划",
+        "url": "https://doc.iocoder.cn/crm/receivable/"
+      },
+      {
+        "type": "link",
+        "title": "【产品】产品管理、产品分类",
+        "url": "https://doc.iocoder.cn/crm/product/"
+      },
+      {
+        "type": "link",
+        "title": "【通用】数据权限",
+        "url": "https://doc.iocoder.cn/crm/permission/"
+      },
+      {
+        "type": "link",
+        "title": "【通用】跟进记录、待办事项",
+        "url": "https://doc.iocoder.cn/crm/follow-up/"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "AI大模型手册",
+    "items": [
+      {
+        "type": "link",
+        "title": "AI 大模型演示",
+        "url": "https://doc.iocoder.cn/ai-preview/"
+      },
+      {
+        "type": "link",
+        "title": "功能开启",
+        "url": "https://doc.iocoder.cn/ai/build/"
+      },
+      {
+        "type": "link",
+        "title": "AI 聊天对话",
+        "url": "https://doc.iocoder.cn/ai/chat/"
+      },
+      {
+        "type": "link",
+        "title": "AI 绘画创作",
+        "url": "https://doc.iocoder.cn/ai/image/"
+      },
+      {
+        "type": "link",
+        "title": "AI 知识库",
+        "url": "https://doc.iocoder.cn/ai/knowledge/"
+      },
+      {
+        "type": "link",
+        "title": "AI 音乐创作",
+        "url": "https://doc.iocoder.cn/ai/music/"
+      },
+      {
+        "type": "link",
+        "title": "AI 写作助手",
+        "url": "https://doc.iocoder.cn/ai/write/"
+      },
+      {
+        "type": "link",
+        "title": "AI 思维导图",
+        "url": "https://doc.iocoder.cn/ai/mindmap/"
+      },
+      {
+        "type": "link",
+        "title": "AI 工具（function calling）",
+        "url": "https://doc.iocoder.cn/ai/tool/"
+      },
+      {
+        "type": "link",
+        "title": "Dify 工作流",
+        "url": "https://doc.iocoder.cn/ai/dify/"
+      },
+      {
+        "type": "link",
+        "title": "FastGPT 工作流",
+        "url": "https://doc.iocoder.cn/ai/fastgpt/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】OpenAI",
+        "url": "https://doc.iocoder.cn/ai/openai/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】通义千问",
+        "url": "https://doc.iocoder.cn/ai/tongyi/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】DeepSeek",
+        "url": "https://doc.iocoder.cn/ai/deep-seek/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】字节豆包",
+        "url": "https://doc.iocoder.cn/ai/doubao/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】腾讯混元",
+        "url": "https://doc.iocoder.cn/ai/hunyuan/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】硅基流动",
+        "url": "https://doc.iocoder.cn/ai/siliconflow/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】MiniMax",
+        "url": "https://doc.iocoder.cn/ai/minimax/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】月之暗灭",
+        "url": "https://doc.iocoder.cn/ai/moonshot/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】百川智能",
+        "url": "https://doc.iocoder.cn/ai/baichuan/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】文心一言",
+        "url": "https://doc.iocoder.cn/ai/yiyan/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】LLAMA",
+        "url": "https://doc.iocoder.cn/ai/llama/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】智谱 GLM",
+        "url": "https://doc.iocoder.cn/ai/glm/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】讯飞星火",
+        "url": "https://doc.iocoder.cn/ai/xinghuo/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】微软 OpenAI",
+        "url": "https://doc.iocoder.cn/ai/azure-openai/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】谷歌 Gemini",
+        "url": "https://doc.iocoder.cn/ai/gemini/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】Stable Diffusion",
+        "url": "https://doc.iocoder.cn/ai/stable-diffusion/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】Midjourney",
+        "url": "https://doc.iocoder.cn/ai/midjourney/"
+      },
+      {
+        "type": "link",
+        "title": "【模型接入】Suno",
+        "url": "https://doc.iocoder.cn/ai/suno/"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "IoT物联网手册",
+    "items": [
+      {
+        "type": "link",
+        "title": "功能开启",
+        "url": "https://doc.iocoder.cn/iot/build/"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "公众号手册",
+    "items": [
+      {
+        "type": "link",
+        "title": "功能开启",
+        "url": "https://doc.iocoder.cn/mp/build/"
+      },
+      {
+        "type": "link",
+        "title": "公众号接入",
+        "url": "https://doc.iocoder.cn/mp/account/"
+      },
+      {
+        "type": "link",
+        "title": "公众号粉丝",
+        "url": "https://doc.iocoder.cn/mp/user/"
+      },
+      {
+        "type": "link",
+        "title": "公众号标签",
+        "url": "https://doc.iocoder.cn/mp/tag/"
+      },
+      {
+        "type": "link",
+        "title": "公众号消息",
+        "url": "https://doc.iocoder.cn/mp/message/"
+      },
+      {
+        "type": "link",
+        "title": "自动回复",
+        "url": "https://doc.iocoder.cn/mp/auto-reply/"
+      },
+      {
+        "type": "link",
+        "title": "公众号菜单",
+        "url": "https://doc.iocoder.cn/mp/menu/"
+      },
+      {
+        "type": "link",
+        "title": "公众号素材",
+        "url": "https://doc.iocoder.cn/mp/material/"
+      },
+      {
+        "type": "link",
+        "title": "公众号图文",
+        "url": "https://doc.iocoder.cn/mp/article/"
+      },
+      {
+        "type": "link",
+        "title": "公众号统计",
+        "url": "https://doc.iocoder.cn/mp/statistics/"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "系统手册",
+    "items": [
+      {
+        "type": "link",
+        "title": "短信配置",
+        "url": "https://doc.iocoder.cn/sms/"
+      },
+      {
+        "type": "link",
+        "title": "邮件配置",
+        "url": "https://doc.iocoder.cn/mail/"
+      },
+      {
+        "type": "link",
+        "title": "站内信配置",
+        "url": "https://doc.iocoder.cn/notify/"
+      },
+      {
+        "type": "link",
+        "title": "数据脱敏、字段权限",
+        "url": "https://doc.iocoder.cn/desensitize/"
+      },
+      {
+        "type": "link",
+        "title": "敏感词",
+        "url": "https://doc.iocoder.cn/sensitive-word/"
+      },
+      {
+        "type": "link",
+        "title": "地区 & IP 库",
+        "url": "https://doc.iocoder.cn/area-and-ip/"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "运维手册",
+    "items": [
+      {
+        "type": "link",
+        "title": "开发环境",
+        "url": "https://doc.iocoder.cn/dev-env/"
+      },
+      {
+        "type": "link",
+        "title": "Linux 部署",
+        "url": "https://doc.iocoder.cn/deployment-linux/"
+      },
+      {
+        "type": "link",
+        "title": "Docker 部署",
+        "url": "https://doc.iocoder.cn/deployment-docker/"
+      },
+      {
+        "type": "link",
+        "title": "Jenkins 部署",
+        "url": "https://doc.iocoder.cn/deployment-jenkins/"
+      },
+      {
+        "type": "link",
+        "title": "宝塔部署",
+        "url": "https://doc.iocoder.cn/deployment-baota/"
+      },
+      {
+        "type": "link",
+        "title": "HTTPS 证书",
+        "url": "https://doc.iocoder.cn/https/"
+      },
+      {
+        "type": "link",
+        "title": "服务监控",
+        "url": "https://doc.iocoder.cn/server-monitor/"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "前端手册 Vue 3.x",
+    "items": [
+      {
+        "type": "link",
+        "title": "开发规范",
+        "url": "https://doc.iocoder.cn/vue3/dev-spec/"
+      },
+      {
+        "type": "link",
+        "title": "菜单路由",
+        "url": "https://doc.iocoder.cn/vue3/route/"
+      },
+      {
+        "type": "link",
+        "title": "Icon 图标",
+        "url": "https://doc.iocoder.cn/vue3/icon/"
+      },
+      {
+        "type": "link",
+        "title": "字典数据",
+        "url": "https://doc.iocoder.cn/vue3/dict/"
+      },
+      {
+        "type": "link",
+        "title": "系统组件",
+        "url": "https://doc.iocoder.cn/vue3/components/"
+      },
+      {
+        "type": "link",
+        "title": "通用方法",
+        "url": "https://doc.iocoder.cn/vue3/util/"
+      },
+      {
+        "type": "link",
+        "title": "配置读取",
+        "url": "https://doc.iocoder.cn/vue3/config-center/"
+      },
+      {
+        "type": "link",
+        "title": "CRUD 组件",
+        "url": "https://doc.iocoder.cn/vue3/crud-schema/"
+      },
+      {
+        "type": "link",
+        "title": "国际化",
+        "url": "https://doc.iocoder.cn/vue3/i18n/"
+      },
+      {
+        "type": "link",
+        "title": "IDE 调试",
+        "url": "https://doc.iocoder.cn/vue3/debugger/"
+      },
+      {
+        "type": "link",
+        "title": "代码格式化",
+        "url": "https://doc.iocoder.cn/vue3/format/"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "前端手册 Vue 2.x",
+    "items": [
+      {
+        "type": "link",
+        "title": "开发规范",
+        "url": "https://doc.iocoder.cn/vue2/dev-spec/"
+      },
+      {
+        "type": "link",
+        "title": "菜单路由",
+        "url": "https://doc.iocoder.cn/vue2/route/"
+      },
+      {
+        "type": "link",
+        "title": "Icon 图标",
+        "url": "https://doc.iocoder.cn/vue2/icon/"
+      },
+      {
+        "type": "link",
+        "title": "字典数据",
+        "url": "https://doc.iocoder.cn/vue2/dict/"
+      },
+      {
+        "type": "link",
+        "title": "系统组件",
+        "url": "https://doc.iocoder.cn/vue2/components/"
+      },
+      {
+        "type": "link",
+        "title": "通用方法",
+        "url": "https://doc.iocoder.cn/vue2/util/"
+      },
+      {
+        "type": "link",
+        "title": "配置读取",
+        "url": "https://doc.iocoder.cn/vue2/config-center/"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "更新日志",
+    "items": [
+      {
+        "type": "link",
+        "title": "【v2.5.0】开发中...",
+        "url": "https://doc.iocoder.cn/changelog/2.5.0/"
+      },
+      {
+        "type": "link",
+        "title": "【v2.4.2】2025-04-12",
+        "url": "https://doc.iocoder.cn/changelog/2.4.2/"
+      },
+      {
+        "type": "link",
+        "title": "【v2.4.1】2025-02-09",
+        "url": "https://doc.iocoder.cn/changelog/2.4.1/"
+      },
+      {
+        "type": "link",
+        "title": "【v2.4.0】2024-12-31",
+        "url": "https://doc.iocoder.cn/changelog/2.4.0/"
+      },
+      {
+        "type": "link",
+        "title": "【v2.3.0】2024-10-07",
+        "url": "https://doc.iocoder.cn/changelog/2.3.0/"
+      },
+      {
+        "type": "link",
+        "title": "【v2.2.0】2024-08-02",
+        "url": "https://doc.iocoder.cn/changelog/2.2.0/"
+      },
+      {
+        "type": "link",
+        "title": "【v2.1.0】2024-05-05",
+        "url": "https://doc.iocoder.cn/changelog/2.1.0/"
+      },
+      {
+        "type": "link",
+        "title": "【v2.0.1】2024-03-01",
+        "url": "https://doc.iocoder.cn/changelog/2.0.1/"
+      },
+      {
+        "type": "link",
+        "title": "【v2.0.0】2024-01-26",
+        "url": "https://doc.iocoder.cn/changelog/2.0.0/"
+      }
+    ]
+  }
+]

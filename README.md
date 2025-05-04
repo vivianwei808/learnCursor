@@ -1,98 +1,103 @@
-# UniApp iOS 项目
+# 若依文档爬虫
 
-这是一个基于 UniApp 框架开发的 iOS 应用项目。
+这是一个用于爬取若依文档的爬虫工具，可以将若依文档网站的内容按照目录结构保存为本地HTML文件。
 
-## 项目结构
+## 功能特点
 
-```
-├── pages/                # 页面文件
-│   ├── index/           # 首页
-│   └── user/            # 用户中心
-├── static/              # 静态资源
-│   └── images/          # 图片资源
-├── store/               # Vuex 状态管理
-├── App.vue              # 应用入口组件
-├── main.js              # 应用入口文件
-├── pages.json           # 页面配置
-├── package.json         # 项目配置
-└── README.md            # 项目说明
-```
+- 自动爬取若依文档网站的目录结构
+- 保存完整的文档内容
+- 生成本地HTML文件，保持原有的目录结构
+- 支持离线浏览
 
-## 功能特性
+## 环境要求
 
-- 基于 Vue.js 的开发框架
-- 支持 iOS 平台
-- 集成了 Vuex 状态管理
-- 包含基础的用户认证功能
-- 响应式布局设计
-
-## 开发环境
-
-- Node.js >= 12.0.0
-- HBuilderX 最新版
-- iOS 开发环境
+- Python 3.7+
+- Chrome浏览器
+- ChromeDriver
 
 ## 安装依赖
 
 ```bash
-npm install
+pip install -r requirements.txt
 ```
 
-## 开发运行
+## 使用方法
+
+1. 确保已安装所有依赖
+2. 运行爬虫脚本：
 
 ```bash
-npm run dev
+python yudao_doc_crawler.py
 ```
 
-## 构建发布
-
-```bash
-npm run build
-```
-
-## 项目配置
-
-- 在 `pages.json` 中配置页面路由
-- 在 `App.vue` 中配置全局样式和生命周期
-- 在 `store/index.js` 中配置状态管理
+3. 爬取的内容将保存在 `yudao_docs` 目录下：
+   - `index.html`: 完整的文档页面
+   - `menu_structure.json`: 目录结构数据
 
 ## 注意事项
 
-1. 开发前请确保已安装所有依赖
-2. 使用 HBuilderX 进行真机调试
-3. 遵循 Vue.js 开发规范
-4. 注意 iOS 平台的兼容性处理
+- 请确保网络连接正常
+- 爬取过程中请勿关闭浏览器
+- 建议使用代理访问以避免IP被封
 
-## 更新日志
+## 项目结构
 
-### v1.0.0
-- 初始化项目
-- 实现基础框架
-- 添加用户认证功能
-- 完成首页和个人中心页面
+```
+.
+├── README.md
+├── requirements.txt
+├── yudao_doc_crawler.py
+└── yudao_docs/
+    ├── index.html
+    └── menu_structure.json
+```
 
-## 会话总结 - 2024-04-26
+## 会话总结
 
-### 主要目的
-- 解决Python虚拟环境依赖包迁移问题
-- 将Python 3.11虚拟环境中的依赖包复制到新目录
+### 会话主要目的
+- 创建一个爬虫工具来爬取若依文档网站的内容
 
 ### 完成的主要任务
-1. 创建了新的目标目录 `/Volumes/pipi/project/python/`
-2. 成功复制了所有site-packages目录下的依赖包
-3. 复制了requirements.txt文件
-4. 验证了文件复制的完整性
+- 创建了基本的项目结构
+- 实现了文档爬虫的核心功能
+- 添加了项目说明文档
 
 ### 关键决策和解决方案
-- 使用`cp -r`命令递归复制所有依赖包
-- 使用`ls -la`命令验证文件复制结果
-- 使用`cat`命令检查requirements.txt内容
+- 使用 Selenium 进行网页爬取，以处理动态加载的内容
+- 采用 BeautifulSoup 解析HTML结构
+- 实现了目录结构的递归解析
+- 生成本地HTML文件保持原有结构
 
 ### 使用的技术栈
-- Python 3.11
-- Linux/Unix命令行工具
+- Python
+- Selenium
+- BeautifulSoup4
+- Chrome WebDriver
 
 ### 修改的文件
-- 创建了新的目录结构
-- 复制了依赖包文件
-- 更新了README.md文件 
+- requirements.txt: 添加了必要的依赖包
+- yudao_doc_crawler.py: 创建了爬虫主程序
+- README.md: 添加了项目说明文档
+
+## 2025-05-03 会话总结
+
+### 主要目的
+优化爬虫代码，解决VIP内容处理和超时问题
+
+### 完成的主要任务
+1. 优化了VIP内容处理逻辑
+2. 增加了页面加载和内容等待的超时时间
+3. 改进了错误处理和日志记录
+
+### 关键决策和解决方案
+1. 将破解脚本包装在立即执行函数中，避免全局变量污染
+2. 在页面加载前注入破解脚本
+3. 使用`networkidle`等待页面完全加载
+
+### 使用的技术栈
+- Python
+- Playwright
+- JavaScript
+
+### 修改的文件
+- `yudao_doc_crawler.py` 
