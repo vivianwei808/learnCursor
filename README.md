@@ -8,12 +8,12 @@
 - 保存完整的文档内容
 - 生成本地HTML文件，保持原有的目录结构
 - 支持离线浏览
+- 支持 VIP 内容的手动处理
 
 ## 环境要求
 
 - Python 3.7+
 - Chrome浏览器
-- ChromeDriver
 
 ## 安装依赖
 
@@ -30,7 +30,15 @@ pip install -r requirements.txt
 python yudao_doc_crawler.py
 ```
 
-3. 爬取的内容将保存在 `yudao_docs` 目录下：
+3. 当检测到 VIP 内容时：
+   - 程序会自动打开默认浏览器
+   - 等待油猴脚本执行完成
+   - 右键点击页面内容区域，选择"检查"
+   - 在开发者工具中找到 ".content-wrapper" 元素
+   - 右键点击该元素，选择"Copy" -> "Copy outerHTML"
+   - 按回车键继续
+
+4. 爬取的内容将保存在 `yudao_docs` 目录下：
    - `index.html`: 完整的文档页面
    - `menu_structure.json`: 目录结构数据
 
@@ -47,57 +55,17 @@ python yudao_doc_crawler.py
 ├── README.md
 ├── requirements.txt
 ├── yudao_doc_crawler.py
+├── yudao_bypass.js
 └── yudao_docs/
     ├── index.html
     └── menu_structure.json
 ```
 
-## 会话总结
+## 开发日志
 
-### 会话主要目的
-- 创建一个爬虫工具来爬取若依文档网站的内容
-
-### 完成的主要任务
-- 创建了基本的项目结构
-- 实现了文档爬虫的核心功能
-- 添加了项目说明文档
-
-### 关键决策和解决方案
-- 使用 Selenium 进行网页爬取，以处理动态加载的内容
-- 采用 BeautifulSoup 解析HTML结构
-- 实现了目录结构的递归解析
-- 生成本地HTML文件保持原有结构
-
-### 使用的技术栈
-- Python
-- Selenium
-- BeautifulSoup4
-- Chrome WebDriver
-
-### 修改的文件
-- requirements.txt: 添加了必要的依赖包
-- yudao_doc_crawler.py: 创建了爬虫主程序
-- README.md: 添加了项目说明文档
-
-## 2025-05-03 会话总结
-
-### 主要目的
-优化爬虫代码，解决VIP内容处理和超时问题
-
-### 完成的主要任务
-1. 优化了VIP内容处理逻辑
-2. 增加了页面加载和内容等待的超时时间
-3. 改进了错误处理和日志记录
-
-### 关键决策和解决方案
-1. 将破解脚本包装在立即执行函数中，避免全局变量污染
-2. 在页面加载前注入破解脚本
-3. 使用`networkidle`等待页面完全加载
-
-### 使用的技术栈
-- Python
-- Playwright
-- JavaScript
-
-### 修改的文件
-- `yudao_doc_crawler.py` 
+### 2024-03-21
+- 会话的主要目的：清理代码，删除不相关的功能
+- 完成的主要任务：删除了所有与浏览器自动化和 VIP 内容自动处理相关的代码
+- 关键决策和解决方案：保留核心功能，使用默认浏览器和手动复制内容的方式
+- 使用的技术栈：Python、BeautifulSoup、webbrowser、pyperclip
+- 修改了哪些文件：yudao_doc_crawler.py

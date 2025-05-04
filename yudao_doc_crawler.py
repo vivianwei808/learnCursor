@@ -8,6 +8,9 @@ import logging
 from tenacity import retry, stop_after_attempt, wait_exponential
 import re
 import traceback
+import webbrowser
+import pyperclip
+import asyncio
 
 # 配置日志
 logging.basicConfig(
@@ -72,81 +75,96 @@ class YudaoDocCrawler:
         (function() {
             'use strict';
 
-            // Overwrite jqueryAlert
+            // 禁用弹窗
             window.jqueryAlert = function(opts) {
                 var dialog;
                 dialog.show = function() {}
                 return dialog;
             }
 
-            // The content of yudao's pooly-written documentation
-            let yudaosPoorlyWrittenDoc = null;
+            // 存储原始文档内容
+            let originalDoc = null;
             let prevPath = document.location.pathname;
 
-            // The routes that are currently being marked as VIP only
-            const blockPathList = ["/bpm/", "/user-center/", "/social-user/", "/oauth2/", "/saas-tenant/", "/sms/", "/mail/", "/notify/", "/mybatis-pro/", "/dynamic-datasource/", "/report/", "/Spring-Boot", "/Spring-Cloud", "/api-doc/", "/module-new/", "/new-feature/", "/dev-hot-swap/", "/file/", "/message-queue/", "/job/", "/idempotent/", "/distributed-lock/", "/rate-limiter/", "/http-sign/", "/project-rename/", "/delete-code/", "/resource-permission/", "/data-permission/", "/deployment-linux/", "/deployment-docker/", "/deployment-baota", "/registry-center/", "/config-center/", "/rpc/", "/gateway/", "/distributed-transaction/", "/server-protection/", "/cloud-debug/", "/mp/", "/mall/", "/pay/", "/crm/", "/member/", "/erp/", "/ai/", "/websocket/", "/vo/", "/system-log/"];
+            // VIP 限制路径列表
+            const blockPathList = [
+                "/bpm/", "/user-center/", "/social-user/", "/oauth2/", "/saas-tenant/", 
+                "/sms/", "/mail/", "/notify/", "/mybatis-pro/", "/dynamic-datasource/", 
+                "/report/", "/Spring-Boot", "/Spring-Cloud", "/api-doc/", "/module-new/", 
+                "/new-feature/", "/dev-hot-swap/", "/file/", "/message-queue/", "/job/", 
+                "/idempotent/", "/distributed-lock/", "/rate-limiter/", "/http-sign/", 
+                "/project-rename/", "/delete-code/", "/resource-permission/", "/data-permission/", 
+                "/deployment-linux/", "/deployment-docker/", "/deployment-baota", "/registry-center/", 
+                "/config-center/", "/rpc/", "/gateway/", "/distributed-transaction/", 
+                "/server-protection/", "/cloud-debug/", "/mp/", "/mall/", "/pay/", "/crm/", 
+                "/member/", "/erp/", "/ai/", "/websocket/", "/vo/", "/system-log/"
+            ];
 
-            // If the current url is 'blocked'
+            // 检查当前URL是否被限制
             const isBlocked = () => {
-                return blockPathList.some((e) => document.location.pathname.includes(e));
+                return blockPathList.some((path) => document.location.pathname.includes(path));
             }
 
-            // Get the documentation content wrapper element
+            // 获取文档内容包装器
             const getWrapper = () => {
                 return document.querySelector('.content-wrapper');
             }
 
-            // Replace content
-            const replace = (str) => {
+            // 替换内容
+            const replaceContent = (content) => {
                 const wrapper = getWrapper();
-                if (str) {
-                    while (wrapper.innerHTML !== str) {
-                        wrapper.innerHTML = str;
-                    }
+                if (content && wrapper) {
+                    wrapper.innerHTML = content;
                 }
             }
 
-            // Observe content changes
+            // 监听内容变化
             const contentObserver = new MutationObserver(() => {
-                if (getWrapper().innerHTML.includes('仅 VIP 可见')) {
-                    replace(yudaosPoorlyWrittenDoc);
+                const wrapper = getWrapper();
+                if (wrapper && wrapper.innerHTML.includes('仅 VIP 可见')) {
+                    replaceContent(originalDoc);
                 }
             });
 
-            // Observe URL changes
+            // 监听URL变化
             const urlObserver = new MutationObserver(() => {
                 if (prevPath !== document.location.pathname) {
                     window.location.reload();
                 }
             });
 
-            urlObserver.observe(document.body, { childList: true });
-
-            // Initialize
-            const $$wrapper = getWrapper();
-            if ($$wrapper && isBlocked()) {
-                yudaosPoorlyWrittenDoc = $$wrapper.innerHTML.includes('仅 VIP 可见') ? null : $$wrapper.innerHTML;
-                window.$$content = yudaosPoorlyWrittenDoc;
-                window.$$replace = function() {
-                    replace(window.$$content);
-                }
-                contentObserver.observe($$wrapper, { childList: true, characterData: true, subtree: true });
-                replace(yudaosPoorlyWrittenDoc);
-            }
-
-            // 监听页面加载完成
-            window.addEventListener('load', function() {
+            // 初始化
+            const init = () => {
                 const wrapper = getWrapper();
                 if (wrapper && isBlocked()) {
-                    yudaosPoorlyWrittenDoc = wrapper.innerHTML.includes('仅 VIP 可见') ? null : wrapper.innerHTML;
-                    window.$$content = yudaosPoorlyWrittenDoc;
-                    window.$$replace = function() {
-                        replace(window.$$content);
+                    originalDoc = wrapper.innerHTML.includes('仅 VIP 可见') ? null : wrapper.innerHTML;
+                    
+                    if (originalDoc) {
+                        // 保存原始内容到全局变量
+                        window.$$content = originalDoc;
+                        window.$$replace = function() {
+                            replaceContent(window.$$content);
+                        }
+
+                        // 开始监听
+                        contentObserver.observe(wrapper, { 
+                            childList: true, 
+                            characterData: true, 
+                            subtree: true 
+                        });
+                        urlObserver.observe(document.body, { childList: true });
+
+                        // 立即替换内容
+                        replaceContent(originalDoc);
                     }
-                    contentObserver.observe(wrapper, { childList: true, characterData: true, subtree: true });
-                    replace(yudaosPoorlyWrittenDoc);
                 }
-            });
+            }
+
+            // 页面加载完成后初始化
+            window.addEventListener('load', init);
+            
+            // 立即执行一次初始化
+            init();
         })();
         """
         # 在页面加载完成后注入脚本
@@ -172,7 +190,75 @@ class YudaoDocCrawler:
         filename = filename.replace(' ', '_')
         return filename
 
-    @retry(stop=stop_after_attempt(2), wait=wait_exponential(multiplier=1, min=2, max=4))
+    def get_vip_content(self, url):
+        """获取VIP内容"""
+        with sync_playwright() as p:
+            browser = p.chromium.launch(
+                headless=False,  # 使用有头模式
+                args=[
+                    '--disable-blink-features=AutomationControlled',
+                    '--disable-features=IsolateOrigins,site-per-process',
+                    '--disable-site-isolation-trials',
+                    '--disable-web-security',
+                    '--disable-features=BlockInsecurePrivateNetworkRequests'
+                ]
+            )
+            context = browser.new_context(
+                viewport={'width': 1920, 'height': 1080},
+                user_agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+                java_script_enabled=True,
+                has_touch=True,
+                locale='zh-CN',
+                timezone_id='Asia/Shanghai'
+            )
+            
+            # 设置浏览器
+            context.set_extra_http_headers({
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+                'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache'
+            })
+            
+            page = context.new_page()
+            
+            # 访问页面
+            page.goto(url, wait_until='networkidle')
+            
+            # 等待内容加载
+            page.wait_for_selector('.content-wrapper', timeout=60000)
+            
+            # 等待油猴脚本执行完成
+            page.wait_for_timeout(5000)  # 等待5秒
+            
+            # 检查是否需要手动处理
+            vip_content = page.query_selector('.content-wrapper')
+            content_html = None
+            if vip_content:
+                content_html = vip_content.inner_html()
+                if "仅 VIP 可见" in content_html:
+                    logging.info("等待用户手动复制页面内容...")
+                    print("\n请按照以下步骤操作：")
+                    print("1. 在浏览器中等待油猴脚本执行完成")
+                    print("2. 右键点击页面内容区域，选择'检查'")
+                    print("3. 在开发者工具中找到 '.content-wrapper' 元素")
+                    print("4. 右键点击该元素，选择'Copy' -> 'Copy outerHTML'")
+                    print("5. 将复制的内容粘贴到此处，然后按回车键继续...")
+                    
+                    # 等待用户输入
+                    content_html = input().strip()
+                    
+                    if not content_html:
+                        logging.warning("未获取到用户输入的内容")
+                        browser.close()
+                        return None
+            
+            # 关闭浏览器
+            browser.close()
+            
+            return content_html
+
     def crawl_page(self, page, url, title):
         """爬取单个页面"""
         try:
@@ -219,9 +305,32 @@ class YudaoDocCrawler:
             
             # 检查是否为VIP内容
             if self.is_vip_content(content_html):
-                logging.info(f"检测到VIP内容，跳过页面: {title} ({url})")
-                self.error_pages.add(url)
-                return None
+                logging.info(f"检测到VIP内容，使用默认浏览器打开: {title} ({url})")
+                print("\n请按照以下步骤操作：")
+                print("1. 等待浏览器打开页面")
+                print("2. 等待油猴脚本执行完成")
+                print("3. 右键点击页面内容区域，选择'检查'")
+                print("4. 在开发者工具中找到 '.content-wrapper' 元素")
+                print("5. 右键点击该元素，选择'Copy' -> 'Copy outerHTML'")
+                print("6. 按回车键继续...")
+                
+                # 使用默认浏览器打开页面
+                webbrowser.open(url)
+                
+                # 等待用户操作完成
+                input()
+                
+                # 获取剪贴板内容
+                try:
+                    content_html = pyperclip.paste()
+                    if not content_html:
+                        logging.warning("剪贴板内容为空")
+                        self.error_pages.add(url)
+                        return None
+                except Exception as e:
+                    logging.error(f"获取剪贴板内容失败: {str(e)}")
+                    self.error_pages.add(url)
+                    return None
             
             # 处理内容中的链接
             soup = BeautifulSoup(content_html, 'html.parser')
@@ -383,12 +492,6 @@ class YudaoDocCrawler:
                 self.setup_browser(context)
                 page = context.new_page()
                 
-                # 注入绕过VIP限制的脚本
-                self.inject_bypass_script(page)
-                
-                # 生成菜单HTML
-                menu_html = self.generate_menu_html()
-                
                 # 爬取所有页面
                 total_pages = sum(len(category['items']) for category in self.menu_structure)
                 current_page = 0
@@ -402,7 +505,7 @@ class YudaoDocCrawler:
                             content_html = self.crawl_page(page, item['url'], item['title'])
                             if content_html:
                                 # 生成页面HTML
-                                page_html = self.generate_html(menu_html, content_html)
+                                page_html = self.generate_html(self.generate_menu_html(), content_html)
                                 
                                 # 保存页面HTML
                                 filename = self.sanitize_filename(item['title'])
@@ -419,7 +522,7 @@ class YudaoDocCrawler:
                     try:
                         content_html = self.crawl_page(page, first_page_url, first_page_title)
                         if content_html:
-                            index_html = self.generate_html(menu_html, content_html)
+                            index_html = self.generate_html(self.generate_menu_html(), content_html)
                             with open(os.path.join(self.output_dir, 'index.html'), 'w', encoding='utf-8') as f:
                                 f.write(index_html)
                     except Exception as e:
